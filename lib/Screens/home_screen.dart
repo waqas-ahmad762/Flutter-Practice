@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:task1/Screens/home_screen_task2.dart';
 import 'package:task1/Widgets/curve_painter.dart';
-import 'package:task1/helper/size_config.dart';
+import '../helper/size_config.dart';
 
 class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
-    SizeConfig().init(context);
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -13,65 +12,67 @@ class HomeScreen extends StatelessWidget {
         child: CustomPaint(
           painter: CurvePainter(),
           child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(20),
-                vertical: getProportionateScreenHeight(20)),
+            padding: EdgeInsets.symmetric(horizontal: (20), vertical: (20)),
             child: Column(
               children: [
                 Align(
                   alignment: Alignment.topRight,
                   child: Padding(
-                    padding:
-                        EdgeInsets.only(top: getProportionateScreenHeight(20)),
+                    padding: EdgeInsets.only(top: (20)),
                     child: Image.asset(
                       'assets/close.png',
-                      height: getProportionateImageSize(20),
-                      width: getProportionateImageSize(20),
+                      height: 3.125 * SizeConfig.heightMultiplier,
+                      width: 5.56 * SizeConfig.widthMultiplier,
                     ),
                   ),
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(4),
+                  height: 0.625 * SizeConfig.heightMultiplier,
                 ),
                 Image.asset(
                   'assets/finger.png',
-                  height: getProportionateImageSize(200),
-                  width: getProportionateImageSize(134.17),
+                  height: 31.25 * SizeConfig.heightMultiplier,
+                  width: 37.27 * SizeConfig.widthMultiplier,
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(25),
+                  height: 3.90625 * SizeConfig.heightMultiplier,
                 ),
                 Text(
-                  'Yayyy!',
+                  'YaYYY!',
                   style: TextStyle(
                     color: Color(0xFF075347),
-                    fontSize: getProportionateFontSize(36),
+                    fontSize: 5.3 * SizeConfig.textMultiplier,
+                    fontFamily: 'Barlow',
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(120),
+                  height: 18.75 * SizeConfig.heightMultiplier,
                 ),
                 Text(
                   'Success',
                   style: TextStyle(
                     color: Color(0xFFFFFFFF),
-                    fontSize: getProportionateFontSize(24),
+                    fontSize: 3.43 * SizeConfig.textMultiplier,
                     fontWeight: FontWeight.w500,
+                    fontFamily: 'Rubik',
                   ),
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(12),
+                  height: 1.875 * SizeConfig.heightMultiplier,
                 ),
                 Text(
                   'We’re open in your area!',
                   style: TextStyle(
-                    color: Color(0xFFFFFFFF),
-                    fontSize: getProportionateFontSize(17),
+                    color: Color(0xFFE4E4E4),
+                    fontSize: 2.34 * SizeConfig.textMultiplier,
+                    fontFamily: 'Rubik',
+                    fontWeight: FontWeight.w400,
                   ),
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(74),
+                  height: 11.56 * SizeConfig.heightMultiplier,
                 ),
                 GestureDetector(
                   onTap: () {
@@ -87,8 +88,9 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(
                       decoration: TextDecoration.underline,
                       color: Color(0xFFE4E4E4),
-                      fontSize: getProportionateFontSize(17),
-                      fontWeight: FontWeight.bold,
+                      fontSize: 2.34 * SizeConfig.textMultiplier,
+                      fontFamily: 'Rubik',
+                      fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),

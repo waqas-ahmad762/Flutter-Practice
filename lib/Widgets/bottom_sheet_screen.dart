@@ -20,18 +20,18 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
               decoration: BoxDecoration(
                 color: Colors.black,
                 borderRadius: BorderRadius.circular(
-                  getProportionateImageSize(5),
+                  5,
                 ),
               ),
-              height: getProportionateScreenHeight(52.96),
-              width: getProportionateImageSize(56),
+              height: 8.275 * SizeConfig.heightMultiplier,
+              width: 18.05 * SizeConfig.widthMultiplier,
               child: Image.asset(
                 'assets/person.png',
                 fit: BoxFit.cover,
               ),
             ),
             SizedBox(
-              width: getProportionateScreenWidth(12),
+              width: 3.89 * SizeConfig.widthMultiplier,
             ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,12 +40,13 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
                   'John’s Doe',
                   style: TextStyle(
                     color: Color(0xFF4C5264),
-                    fontSize: getProportionateFontSize(18),
-                    fontWeight: FontWeight.bold,
+                    fontSize: 2.5 * SizeConfig.textMultiplier,
+                    fontWeight: FontWeight.w700,
+                    fontFamily: 'Montserrat',
                   ),
                 ),
                 SizedBox(
-                  height: getProportionateScreenHeight(15),
+                  height: 2.34 * SizeConfig.heightMultiplier,
                 ),
                 Row(
                   children: [
@@ -53,14 +54,15 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
                       '4.5',
                       style: TextStyle(
                         color: Color(0xFF4C5264),
-                        fontSize: getProportionateFontSize(16),
-                        fontWeight: FontWeight.bold,
+                        fontSize: 2.18 * SizeConfig.textMultiplier,
+                        fontWeight: FontWeight.w700,
+                        fontFamily: 'Montserrat',
                       ),
                     ),
                     Icon(
                       Icons.star,
                       color: Color(0xFFFFB900),
-                      size: getProportionateImageSize(12.6),
+                      size: (12.6),
                     ),
                   ],
                 ),
@@ -71,14 +73,14 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
         Container(
           decoration: BoxDecoration(
             color: Colors.black,
-            borderRadius: BorderRadius.circular(5),
+            borderRadius: BorderRadius.circular(8),
           ),
-          height: getProportionateScreenHeight(40),
-          width: getProportionateScreenWidth(40),
+          height: 6.25 * SizeConfig.heightMultiplier,
+          width: 11.11 * SizeConfig.widthMultiplier,
           child: Center(
             child: Icon(
               Icons.message,
-              size: getProportionateImageSize(18),
+              size: (18),
               color: Color(0xFFFFFFFF),
             ),
           ),
@@ -90,11 +92,16 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
   Widget _slider() {
     return Center(
       child: SliderButton(
+        buttonSize: 12.46 * SizeConfig.imageSizeMultiplier,
+        height: 8.125 * SizeConfig.heightMultiplier,
+        width: double.infinity,
         dismissible: false,
         buttonColor: Colors.black,
         backgroundColor: Color(0xFFE2E8ED),
         shimmer: false,
         action: () {
+          print('action');
+          print(timer);
           if (timer == false) {
             setState(() {
               timer = true;
@@ -118,15 +125,17 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
           timer == false ? "SLIDE TO START WORK" : "SLIDE TO END WORK",
           style: TextStyle(
             color: Color(0xFF2E2E2E),
-            fontWeight: FontWeight.bold,
-            fontSize: 14,
+            fontSize: 2.18 * SizeConfig.textMultiplier,
+            fontWeight: FontWeight.w600,
+            fontFamily: 'Montserrat',
           ),
+          textAlign: TextAlign.center,
         ),
         icon: Center(
           child: Image.asset(
             'assets/icons.png',
-            height: getProportionateImageSize(24),
-            width: getProportionateImageSize(24),
+            height: 3.75 * SizeConfig.heightMultiplier,
+            width: 6.67 * SizeConfig.widthMultiplier,
           ),
         ),
       ),
@@ -137,42 +146,59 @@ class _BottomSheetScreenState extends State<BottomSheetScreen> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(
-            getProportionateImageSize(10),
+            10,
           ),
           topRight: Radius.circular(
-            getProportionateImageSize(10),
+            10,
           ),
         ),
         border: Border.all(
           color: Colors.grey[100],
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Color(0xFF4C52641A),
+            blurRadius: 5,
+            spreadRadius: 0.0,
+            offset: Offset(2.0, 2.0),
+          )
+        ],
       ),
-      height: getProportionateScreenHeight(250),
+      height: 41.3125 * SizeConfig.heightMultiplier,
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: getProportionateScreenWidth(23),
-          vertical: getProportionateScreenHeight(23),
+          horizontal: (23),
+          vertical: (23),
         ),
         child: Column(
           children: [
             _bottomSheetUpperPart(),
             SizedBox(
-              height: getProportionateScreenHeight(15),
+              height: 2.34 * SizeConfig.heightMultiplier,
+            ),
+            Divider(),
+            SizedBox(
+              height: 2.34 * SizeConfig.heightMultiplier,
             ),
             if (timer == false)
               Text(
                 'Get your gear setup & ready to work.',
                 style: TextStyle(
                   color: Color(0xFF4C5264),
-                  fontSize: getProportionateFontSize(18),
-                  fontWeight: FontWeight.bold,
+                  fontSize: 2.5 * SizeConfig.textMultiplier,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Montserrat',
                 ),
               ),
             if (timer) NewStopWatch(startStop),
             SizedBox(
-              height: getProportionateScreenHeight(10),
+              height: 1.56 * SizeConfig.heightMultiplier,
+            ),
+            SizedBox(
+              height: 2.34 * SizeConfig.heightMultiplier,
             ),
             _slider(),
           ],

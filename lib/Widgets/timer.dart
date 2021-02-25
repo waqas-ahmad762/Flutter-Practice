@@ -34,20 +34,20 @@ class _NewStopWatchState extends State<NewStopWatch> {
         Text(
           'TIMER',
           style: TextStyle(
-            fontSize: getProportionateFontSize(22),
+            fontSize: 3.44 * SizeConfig.textMultiplier,
             color: Color(0xFF4C5264),
           ),
         ),
         Text(
           elapsedTime,
           style: TextStyle(
-            fontSize: getProportionateFontSize(22),
+            fontSize: 3.44 * SizeConfig.textMultiplier,
             color: Color(0xFFF98411),
           ),
         ),
         Container(
-          height: getProportionateScreenHeight(39),
-          width: getProportionateScreenWidth(39),
+          height: 6 * SizeConfig.heightMultiplier,
+          width: 10.83 * SizeConfig.widthMultiplier,
           child: FloatingActionButton(
             backgroundColor: Colors.black,
             onPressed: () {

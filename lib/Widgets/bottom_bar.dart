@@ -18,11 +18,11 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
           topLeft: Radius.circular(10),
         ),
       ),
-      height: 70,
+      height: 10.93 * SizeConfig.heightMultiplier,
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: getProportionateScreenWidth(24),
-          vertical: getProportionateScreenHeight(24),
+          horizontal: (24),
+          vertical: (24),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -65,14 +65,14 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
             ),
             child: Image.asset(
               imagePath,
-              height: getProportionateImageSize(24),
-              width: getProportionateImageSize(24),
+              height: 3.75 * SizeConfig.heightMultiplier,
+              width: 6.67 * SizeConfig.widthMultiplier,
             ),
           )
         : Image.asset(
             imagePath,
-            height: getProportionateImageSize(24),
-            width: getProportionateImageSize(24),
+            height: 3.75 * SizeConfig.heightMultiplier,
+            width: 6.67 * SizeConfig.widthMultiplier,
           );
   }
 }

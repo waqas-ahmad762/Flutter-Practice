@@ -1,36 +1,35 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 class SizeConfig {
-  static MediaQueryData _mediaQueryData;
-  static double screenWidth;
-  static double screenHeight;
-  static double defaultSize;
-  static Orientation orientation;
+  static double _screenWidth;
+  static double _screenHeight;
+  static double _blockWidth = 0;
+  static double _blockHeight = 0;
 
-  void init(BuildContext context) {
-    _mediaQueryData = MediaQuery.of(context);
-    screenWidth = _mediaQueryData.size.width;
-    screenHeight = _mediaQueryData.size.height;
-    orientation = _mediaQueryData.orientation;
+  static double textMultiplier;
+  static double imageSizeMultiplier;
+  static double heightMultiplier;
+  static double widthMultiplier;
+
+  void init(BoxConstraints constraints, Orientation orientation) {
+    if (orientation == Orientation.portrait) {
+      _screenWidth = constraints.maxWidth;
+      _screenHeight = constraints.maxHeight;
+    } else {
+      _screenWidth = constraints.maxHeight;
+      _screenHeight = constraints.maxWidth;
+    }
+
+    _blockWidth = _screenWidth / 100;
+    _blockHeight = _screenHeight / 100;
+
+    textMultiplier = _blockHeight;
+    imageSizeMultiplier = _blockWidth;
+    heightMultiplier = _blockHeight;
+    widthMultiplier = _blockWidth;
+
+    print('Width: ' + _blockWidth.toString());
+    print('Height:' + _blockHeight.toString());
   }
-}
-
-double getProportionateScreenHeight(double inputHeight) {
-  double screenHeight = SizeConfig.screenHeight;
-  return (inputHeight / 812.0) * screenHeight;
-}
-
-double getProportionateScreenWidth(double inputWidth) {
-  double screenWidth = SizeConfig.screenWidth;
-  return (inputWidth / 375.0) * screenWidth;
-}
-
-double getProportionateFontSize(double inputSize) {
-  double screenHeight = SizeConfig.screenHeight;
-  return (inputSize / 812.0) * screenHeight;
-}
-
-double getProportionateImageSize(double inputSize) {
-  double screenWidth = SizeConfig.screenWidth;
-  return (inputSize / 375.0) * screenWidth;
 }

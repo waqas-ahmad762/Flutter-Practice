@@ -3,6 +3,7 @@ import 'package:task1/Widgets/bottom_bar.dart';
 import 'package:task1/Widgets/bottom_sheet_screen.dart';
 import 'package:task1/Widgets/home_detail_screen.dart';
 import 'package:task1/Widgets/top_widget.dart';
+import 'package:task1/helper/size_config.dart';
 
 class HomeScreenTask2 extends StatefulWidget {
   @override
@@ -19,6 +20,9 @@ class _HomeScreenTask2State extends State<HomeScreenTask2> {
         children: [
           TopWidget(),
           HomeDetailScreen(),
+          Container(
+            height: 35.3125 * SizeConfig.heightMultiplier,
+          ),
         ],
       ),
     );

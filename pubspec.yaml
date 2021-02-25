@@ -65,12 +65,41 @@ flutter:
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
-  # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  # example: Quicksand-Bold.ttf
+  fonts:
+    - family: Quicksand
+      fonts:
+        - asset: fonts/Quicksand-Bold.ttf
+          weight: 700
+    - family: Rubik
+      fonts:
+        - asset: fonts/Rubik-Bold.ttf
+          weight: 700
+        - asset: fonts/Rubik-Medium.ttf
+          weight: 500
+        - asset: fonts/Rubik-Regular.ttf
+          weight: 400
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat-Bold.ttf
+          weight: 700
+        - asset: fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: fonts/Montserrat-Regular.ttf
+          weight: 400
+        - asset: fonts/Montserrat-SemiBold.ttf
+          weight: 600
+    - family: Barlow
+      fonts:
+        - asset: fonts/barlow-condensed-semibold.ttf
+          weight: 400
+    
+
+    # - family: Barlow
+    #   fonts:
+    #   - asset : assets/fonts/barlow-condensed.semibold.ttf
+    #     weight: 400
+
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

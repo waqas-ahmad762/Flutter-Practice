@@ -61,7 +61,7 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
     return _isLoading
         ? Padding(
             padding: EdgeInsets.only(
-              top: getProportionateScreenHeight(20),
+              top: (20),
             ),
             child: Center(
               child: CircularProgressIndicator(
@@ -71,101 +71,127 @@ class _HomeDetailScreenState extends State<HomeDetailScreen> {
               ),
             ),
           )
-        : Align(
-            alignment: Alignment.topLeft,
-            child: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: getProportionateScreenWidth(23),
-                vertical: getProportionateScreenHeight(23),
-              ),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    _post[0].name.substring(10), //'Lawn Mowing',
-                    style: TextStyle(
-                      color: Color(0xFF43A236),
-                      fontSize: getProportionateFontSize(24),
-                      fontWeight: FontWeight.bold,
-                    ),
+        : Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: (23),
+              vertical: (23),
+            ),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  _post[0].name.substring(10), //'Lawn Mowing',
+                  style: TextStyle(
+                    color: Color(0xFF43A236),
+                    fontSize: 3.43 * SizeConfig.textMultiplier,
+                    fontFamily: 'Quicksand',
+                    fontWeight: FontWeight.w700,
                   ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(8),
+                ),
+                SizedBox(
+                  height: 1.25 * SizeConfig.heightMultiplier,
+                ),
+                Text(
+                  _post[0].email, //'Small Grass - 3 hours',
+                  style: TextStyle(
+                    color: Color(0xFF4C5264),
+                    fontSize: 2.5 * SizeConfig.textMultiplier,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w700,
                   ),
-                  Text(
-                    _post[0].email, //'Small Grass - 3 hours',
+                ),
+                SizedBox(
+                  height: 3.125 * SizeConfig.heightMultiplier,
+                ),
+                _heading(
+                  'assets/ico.png',
+                  'Today $date $time',
+                  Color(0xFF43A236),
+                ),
+                SizedBox(
+                  height: 1.25 * SizeConfig.heightMultiplier,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 33),
+                  child: Text(
+                    'Recurring, Every 2 weeks',
                     style: TextStyle(
                       color: Color(0xFF4C5264),
-                      fontSize: getProportionateFontSize(18),
+                      fontSize: 2.5 * SizeConfig.textMultiplier,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(8),
-                  ),
-                  Row(
-                    children: [
-                      Image.asset('assets/ico.png'),
-                      SizedBox(
-                        width: getProportionateScreenWidth(18),
-                      ),
-                      Text(
-                        '$date $time',
-                        style: TextStyle(
-                          color: Color(0xFF4C5264),
-                          fontSize: getProportionateFontSize(18),
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(8),
-                  ),
-                  Padding(
-                    padding:
-                        EdgeInsets.only(left: getProportionateScreenWidth(32)),
-                    child: Text(
-                      'Recurring, Every 2 weeks',
-                      style: TextStyle(
-                        color: Color(0xFF4C5264),
-                        fontSize: getProportionateFontSize(18),
-                      ),
+                ),
+                SizedBox(
+                  height: 3.125 * SizeConfig.heightMultiplier,
+                ),
+                _heading('assets/path2.png', '221B barket Sector',
+                    Color(0xFF43A236)),
+                Padding(
+                  padding: EdgeInsets.only(left: 33),
+                  child: Text(
+                    'Sector 2B, Phase2, New York USA',
+                    style: TextStyle(
+                      color: Color(0xFF4C5264),
+                      fontSize: 2.5 * SizeConfig.textMultiplier,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(10),
-                  ),
-                  Text(
+                ),
+                SizedBox(
+                  height: 3.125 * SizeConfig.heightMultiplier,
+                ),
+                _heading('assets/setting.png', '221B barket Sector',
+                    Color(0xFF43A236)),
+                Padding(
+                  padding: EdgeInsets.only(left: 33),
+                  child: Text(
                     _post[0].body,
                     style: TextStyle(
                       color: Color(0xFF4C5264),
-                      fontSize: getProportionateFontSize(18),
+                      fontSize: 2.5 * SizeConfig.textMultiplier,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(8),
-                  ),
-                  Text(
-                    _post[0].body,
-                    style: TextStyle(
-                      color: Color(0xFF4C5264),
-                      fontSize: getProportionateFontSize(18),
-                    ),
-                  ),
-                  SizedBox(
-                    height: getProportionateScreenHeight(8),
-                  ),
-                  Text(
-                    _post[0].body,
-                    style: TextStyle(
-                      color: Color(0xFF4C5264),
-                      fontSize: getProportionateFontSize(18),
-                    ),
-                  ),
-                ],
-              ),
+                ),
+                SizedBox(
+                  height: 4.68 * SizeConfig.heightMultiplier,
+                ),
+              ],
             ),
           );
+  }
+
+  Widget _heading(
+    String imagePath,
+    String data,
+    Color color,
+  ) {
+    return Row(
+      children: [
+        Image.asset(
+          imagePath,
+          height: 2.36 * SizeConfig.heightMultiplier,
+          width: 4.19 * SizeConfig.widthMultiplier,
+          color: color,
+        ),
+        SizedBox(
+          width: 5 * SizeConfig.widthMultiplier,
+        ),
+        Text(
+          data,
+          style: TextStyle(
+            color: Color(0xFF4C5264),
+            fontSize: 2.5 * SizeConfig.textMultiplier,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.w500,
+          ),
+        ),
+      ],
+    );
   }
 }

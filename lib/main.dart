@@ -19,9 +19,18 @@ class MyApp extends StatelessWidget {
         ),
         //ChangeNotifierProvider.value(value: ImageProvider(),),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          return OrientationBuilder(
+            builder: (context, orientation) {
+              SizeConfig().init(constraints, orientation);
+              return MaterialApp(
+                debugShowCheckedModeBanner: false,
+                home: HomeScreen(),
+              );
+            },
+          );
+        },
       ),
     );
   }

@@ -19,7 +19,7 @@ class _TopWidgetState extends State<TopWidget> {
   Widget _carousel() {
     return Container(
       width: double.infinity,
-      height: getProportionateScreenHeight(200),
+      height: 31.25 * SizeConfig.heightMultiplier,
       color: Color(0XFFFFB900),
       child: CarouselSlider.builder(
         enableAutoSlider: true,
@@ -35,8 +35,8 @@ class _TopWidgetState extends State<TopWidget> {
         },
         slideIndicator: CircularSlideIndicator(
           padding: EdgeInsets.symmetric(
-            horizontal: getProportionateScreenWidth(10),
-            vertical: getProportionateScreenHeight(10),
+            horizontal: (10),
+            vertical: (10),
           ),
           currentIndicatorColor: Color(0xFFFFFFFF),
           indicatorBackgroundColor: Color(0xFFBCC5D3),
@@ -49,8 +49,8 @@ class _TopWidgetState extends State<TopWidget> {
   Widget _upperIcon() {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: getProportionateScreenWidth(23),
-        vertical: getProportionateScreenHeight(30),
+        horizontal: (23),
+        vertical: (30),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -61,14 +61,14 @@ class _TopWidgetState extends State<TopWidget> {
             },
             child: Image.asset(
               'assets/light-close.png',
-              height: getProportionateImageSize(24),
-              width: getProportionateImageSize(24),
+              height: 3.75 * SizeConfig.heightMultiplier,
+              width: 6.67 * SizeConfig.widthMultiplier,
             ),
           ),
           Image.asset(
             'assets/setting.png',
-            height: getProportionateImageSize(24),
-            width: getProportionateImageSize(24),
+            height: 3.75 * SizeConfig.heightMultiplier,
+            width: 6.67 * SizeConfig.widthMultiplier,
           ),
         ],
       ),
